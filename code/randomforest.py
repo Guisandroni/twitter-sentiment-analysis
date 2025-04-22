@@ -5,20 +5,20 @@ from sklearn.ensemble import RandomForestClassifier
 from scipy.sparse import lil_matrix
 from sklearn.feature_extraction.text import TfidfTransformer
 
-# Performs classification using RandomForest classifier.
+# Performs classification using RandomForest algorithm.
 
-FREQ_DIST_FILE = '../train-processed-freqdist.pkl'
-BI_FREQ_DIST_FILE = '../train-processed-freqdist-bi.pkl'
-TRAIN_PROCESSED_FILE = '../train-processed.csv'
-TEST_PROCESSED_FILE = '../test-processed.csv'
+FREQ_DIST_FILE = 'twitter_cleaned-processed-freqdist.pkl'
+BI_FREQ_DIST_FILE = 'twitter_cleaned-processed-freqdist-bi.pkl'
+TRAIN_PROCESSED_FILE = 'twitter_cleaned-processed.csv'
+TEST_PROCESSED_FILE = 'test-processed.csv'
 TRAIN = True
 UNIGRAM_SIZE = 15000
 VOCAB_SIZE = UNIGRAM_SIZE
-USE_BIGRAMS = False
+USE_BIGRAMS = True
 if USE_BIGRAMS:
     BIGRAM_SIZE = 10000
     VOCAB_SIZE = UNIGRAM_SIZE + BIGRAM_SIZE
-FEAT_TYPE = 'presence'
+FEAT_TYPE = 'frequency'
 
 
 def get_feature_vector(tweet):

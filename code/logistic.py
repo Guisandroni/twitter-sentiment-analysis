@@ -4,13 +4,16 @@ import sys
 import utils
 import random
 import numpy as np
+from sklearn.linear_model import LogisticRegression
+from scipy.sparse import lil_matrix
+from sklearn.feature_extraction.text import TfidfTransformer
 
 # Performs classification using Logistic Regression.
 
-FREQ_DIST_FILE = '../train-processed-freqdist.pkl'
-BI_FREQ_DIST_FILE = '../train-processed-freqdist-bi.pkl'
-TRAIN_PROCESSED_FILE = '../train-processed.csv'
-TEST_PROCESSED_FILE = '../test-processed.csv'
+FREQ_DIST_FILE = 'twitter_cleaned-processed-freqdist.pkl'
+BI_FREQ_DIST_FILE = 'twitter_cleaned-processed-freqdist-bi.pkl'
+TRAIN_PROCESSED_FILE = 'twitter_cleaned-processed.csv'
+TEST_PROCESSED_FILE = 'test-processed.csv'
 TRAIN = True
 UNIGRAM_SIZE = 15000
 VOCAB_SIZE = UNIGRAM_SIZE
